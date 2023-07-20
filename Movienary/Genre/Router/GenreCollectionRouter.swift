@@ -7,15 +7,17 @@
 
 import UIKit
 
-class GenreCollectionRouter {
-    static func createModule() -> UIViewController {
-        let viewController = GenreCollectionViewController()
-        let service = MovieService()
-        let interactor = GenreCollectionInteractor(service: service)
-        let presenter = GenreCollectionPresenter(view: viewController, interactor: interactor)
-        interactor.output = presenter
-        viewController.presenter = presenter
+protocol GenreCollectionRouterable: AnyObject {
+    var container: MovieCollectionDepencyContainer { get set }
+    func presentMovieCollectionView(with genre: Genre)
+}
 
-        return viewController
+class GenreCollectionRouter: Router, GenreCollectionRouterable {
+    var container = MovieCollectionDepencyContainer()
+
+    func presentMovieCollectionView(with genre: Genre) {
+        let movieCollectionView = container.createModule(for: genre)
+        guard let topNav = topNavController else { return }
+        topNav.pushViewController(movieCollectionView, animated: true)
     }
 }

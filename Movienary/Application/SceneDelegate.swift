@@ -15,8 +15,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = scene as? UIWindowScene else { return }
         let window = UIWindow(windowScene: windowScene)
-        let cardListVC = GenreCollectionRouter.createModule()
-        let navBar = BaseNavigationController(rootViewController: cardListVC)
+        let genreContainer = GenreCollectionDepencyContainer()
+        let genreView = genreContainer.createModule()
+        let navBar = BaseNavigationController(rootViewController: genreView)
         window.rootViewController = navBar
         window.rootViewController?.view.backgroundColor = .white
         self.window = window

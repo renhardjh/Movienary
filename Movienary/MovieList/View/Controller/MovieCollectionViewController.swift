@@ -1,17 +1,17 @@
 //
-//  ViewController.swift
+//  MovieCollectionViewController.swift
 //  Movienary
 //
-//  Created by RenhardJH on 18/07/23.
+//  Created by RenhardJH on 19/07/23.
 //
 
 import UIKit
 import SkeletonView
 
-class GenreCollectionViewController: BaseViewController, GenreCollectionViewInterface {
+class MovieCollectionViewController: BaseViewController, MovieCollectionViewInterface {
     @IBOutlet weak var collectionView: UICollectionView!
 
-    var presenter: GenreCollectionPresenter!
+    var presenter: MovieCollectionPresenter!
 
     convenience init() {
         self.init(nibName: String(describing: type(of: self)), bundle: nil)
@@ -20,7 +20,7 @@ class GenreCollectionViewController: BaseViewController, GenreCollectionViewInte
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        presenter.loadGenres()
+        presenter.loadMovies()
     }
 
     private func setupView() {
@@ -35,9 +35,10 @@ class GenreCollectionViewController: BaseViewController, GenreCollectionViewInte
         collectionView.collectionViewLayout = flowLayout
         collectionView.contentInsetAdjustmentBehavior = .always
 
-        let cellNib = UINib(nibName: GenreCollectionViewCell.name, bundle: nil)
-        collectionView.register(cellNib, forCellWithReuseIdentifier: GenreCollectionViewCell.name)
+        let cellNib = UINib(nibName: MovieCollectionViewCell.name, bundle: nil)
+        collectionView.register(cellNib, forCellWithReuseIdentifier: MovieCollectionViewCell.name)
         collectionView.register(TitleCollectionViewHeaderCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TitleCollectionViewHeaderCell.name)
+        collectionView.register(MovieCollectionLoadingFooter.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: MovieCollectionLoadingFooter.name)
     }
 
     func displayLoading() {
@@ -50,62 +51,85 @@ class GenreCollectionViewController: BaseViewController, GenreCollectionViewInte
         collectionView.stopShimmeringView()
     }
 
-    func displayGenres() {
+    func displayMovies() {
         collectionView.reloadData()
     }
 
     func displayAlert(type: AlertType, message: String) {
         let alert = UIAlertController(title: type.title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Try Again", style: .default, handler: { [weak self] _ in
-            self?.presenter.loadGenres()
+        alert.addAction(UIAlertAction(title: type.action, style: .default, handler: { [weak self] _ in
+            self?.presenter.loadMovies()
         }))
         self.present(alert, animated: true, completion: nil)
     }
 }
 
-extension GenreCollectionViewController: SkeletonCollectionViewDelegate, SkeletonCollectionViewDataSource {
+extension MovieCollectionViewController: SkeletonCollectionViewDelegate, SkeletonCollectionViewDataSource {
     func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return presenter.skeletonCount
     }
 
     func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier {
-        return GenreCollectionViewCell.name
+        return MovieCollectionViewCell.name
     }
 
     func collectionSkeletonView(_ skeletonView: UICollectionView, supplementaryViewIdentifierOfKind: String, at indexPath: IndexPath) -> ReusableCellIdentifier? {
-        return TitleCollectionViewHeaderCell.name
+        switch supplementaryViewIdentifierOfKind {
+        case UICollectionView.elementKindSectionHeader:
+            return TitleCollectionViewHeaderCell.name
+        case UICollectionView.elementKindSectionFooter:
+            return MovieCollectionLoadingFooter.name
+        default:
+            return nil
+        }
     }
 }
 
-extension GenreCollectionViewController: UICollectionViewDelegateFlowLayout {
+extension MovieCollectionViewController: UICollectionViewDelegateFlowLayout {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return presenter.sectionCount
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return presenter.genreCount
+        return presenter.movieCount
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GenreCollectionViewCell.name, for: indexPath) as? GenreCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.name, for: indexPath) as? MovieCollectionViewCell else {
             return UICollectionViewCell()
         }
 
-        if let genre: Genre = presenter.item(at: indexPath.item) {
-            cell.setContent(genre)
+        if let movie: Movie = presenter.item(at: indexPath.item) {
+            cell.setContent(movie)
         }
 
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TitleCollectionViewHeaderCell.name, for: indexPath) as? TitleCollectionViewHeaderCell else {
+        switch kind {
+            
+        case UICollectionView.elementKindSectionHeader:
+            guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TitleCollectionViewHeaderCell.name, for: indexPath) as? TitleCollectionViewHeaderCell else {
+                return UICollectionReusableView()
+            }
+
+            header.setContent(presenter.featureTitle)
+
+            return header
+
+        case UICollectionView.elementKindSectionFooter:
+            guard let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: MovieCollectionLoadingFooter.name, for: indexPath) as? MovieCollectionLoadingFooter else {
+                return UICollectionReusableView()
+            }
+
+            footer.indicator.startAnimating()
+
+            return footer
+
+        default:
             return UICollectionReusableView()
         }
-
-        header.setContent(presenter.featureTitle)
-
-        return header
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
@@ -119,9 +143,11 @@ extension GenreCollectionViewController: UICollectionViewDelegateFlowLayout {
         )
     }
 
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let genre: Genre = presenter.item(at: indexPath.item) else { return }
-        presenter.selectGenre(genre)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: presenter.loadingMoreHeight)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        presenter.endLessScroll(indexPath)
     }
 }
-

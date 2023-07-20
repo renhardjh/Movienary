@@ -14,13 +14,37 @@ final class Network {
     }
 
     enum Host {
-        case moviedb
+        case moviedbAPI
+        case moviedbImage(type: PosterType, pathName: String)
 
         var value: String {
             switch self {
-            case .moviedb:
+            case .moviedbAPI:
                 return "https://api.themoviedb.org"
+            case .moviedbImage(let type, let pathName):
+                return "https://image.tmdb.org" + type.path + pathName
             }
+        }
+    }
+
+    enum Status {
+        case notLoad
+        case loading
+        case failed
+        case success
+    }
+}
+
+enum PosterType {
+    case preview
+    case original
+
+    var path: String {
+        switch self {
+        case .preview:
+            return "/t/p/w500"
+        case .original:
+            return "/t/p/original"
         }
     }
 }

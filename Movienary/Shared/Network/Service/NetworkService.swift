@@ -11,7 +11,7 @@ class NetworkService {
     static let shared = NetworkService()
     let accessToken = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkODQ1NzA0Yzg5ZTUxNjkxZjNhN2RmOTUzYWU2NGU2NyIsInN1YiI6IjVkMjMzNmE2NmQ0Yzk3MjczNjc0YTQ0YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ._Qp608-Sz0NdHaicWJTD5DHLMXWG9q6lruMTT3AaRqM"
 
-    func request<T: Decodable>(host: Network.Host = .moviedb, _ method: Network.Method = .get, _ endpoint: NetworkEndpoint, body: [String: Any] = [:], responseType: T.Type, completion: @escaping (_ result: Result<T, Error>) -> Void) {
+    func request<T: Decodable>(host: Network.Host = .moviedbAPI, _ method: Network.Method = .get, _ endpoint: NetworkEndpoint, body: [String: Any] = [:], responseType: T.Type, completion: @escaping (_ result: Result<T, Error>) -> Void) {
 
         let urlString = host.value + "/" + endpoint.value
         guard let url = URL(string: urlString) else { return }

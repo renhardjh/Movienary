@@ -30,8 +30,12 @@ class GenreCollectionInteractor: GenreCollectionInteraction {
         service.getGenreMovieList(responseType: GenreList.self) { [weak self] result in
             switch result {
             case .success(let data):
-                self?.genres = data.genres
-                self?.output?.genreFetched()
+                if data.success == false, let statusMsg = data.statusMessage {
+                    self?.output?.fetchFailure(error: statusMsg)
+                } else {
+                    self?.genres = data.genres ?? []
+                    self?.output?.genreFetched()
+                }
             case .failure(let error):
                 self?.output?.fetchFailure(error: error.localizedDescription)
             }
