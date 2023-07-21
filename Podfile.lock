@@ -1,22 +1,31 @@
 PODS:
+  - Cosmos (23.0.0)
   - SDWebImage (5.15.8):
     - SDWebImage/Core (= 5.15.8)
   - SDWebImage/Core (5.15.8)
   - SkeletonView (1.30.4)
+  - YouTubePlayer (0.7.2)
 
 DEPENDENCIES:
+  - Cosmos
   - SDWebImage
   - SkeletonView
+  - YouTubePlayer
 
 SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Cosmos
+    - YouTubePlayer
   trunk:
     - SDWebImage
     - SkeletonView
 
 SPEC CHECKSUMS:
+  Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
   SDWebImage: cb032eba469c54e0000e78bcb0a13cdde0a52798
   SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
+  YouTubePlayer: 2b5f2830d8f9b2cde942083211291e382c9e6bd5
 
-PODFILE CHECKSUM: d33e1d9af10bc7e18ccd65b493fd6678fbdab348
+PODFILE CHECKSUM: 285c8a3e83f996a960aa8b5a3299160fa22de610
 
 COCOAPODS: 1.11.3

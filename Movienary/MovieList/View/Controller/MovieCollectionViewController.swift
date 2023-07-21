@@ -150,4 +150,9 @@ extension MovieCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         presenter.endLessScroll(indexPath)
     }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let movie: Movie = presenter.item(at: indexPath.item) else { return }
+        presenter.selectMovie(movie)
+    }
 }

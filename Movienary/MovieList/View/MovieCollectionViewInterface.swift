@@ -7,9 +7,8 @@
 
 import Foundation
 
-protocol MovieCollectionViewInterface: AnyObject {
+protocol MovieCollectionViewInterface: AnyObject, BaseViewInterface {
     func displayLoading()
     func hideLoading()
     func displayMovies()
-    func displayAlert(type: AlertType, message: String)
 }

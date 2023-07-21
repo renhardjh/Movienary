@@ -6,6 +6,8 @@ target 'Movienary' do
   use_frameworks!
   pod 'SDWebImage'
   pod 'SkeletonView'
+  pod 'Cosmos'
+  pod 'YouTubePlayer'
 
   target 'MovienaryTests' do
     inherit! :search_paths

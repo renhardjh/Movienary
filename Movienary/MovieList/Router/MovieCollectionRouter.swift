@@ -8,16 +8,16 @@
 import UIKit
 
 protocol MovieCollectionRouterable: AnyObject {
-    var container: MovieCollectionDepencyContainer { get set }
+    var container: MovieDetailDepencyContainer { get set }
     func presentMovieDetailnView(with movie: Movie)
 }
 
 class MovieCollectionRouter: Router, MovieCollectionRouterable {
-    var container = MovieCollectionDepencyContainer()
+    var container = MovieDetailDepencyContainer()
 
     func presentMovieDetailnView(with movie: Movie) {
-        let moviewDetailView = container.createModule(for: Genre(id: 1, name: ""))
+        let movieDetailView = container.createModule(for: movie)
         guard let topNav = topNavController else { return }
-        topNav.pushViewController(moviewDetailView, animated: true)
+        topNav.pushViewController(movieDetailView, animated: true)
     }
 }

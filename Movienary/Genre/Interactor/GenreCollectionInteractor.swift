@@ -19,7 +19,7 @@ protocol GenreCollectionInteractorOutput: AnyObject {
 
 class GenreCollectionInteractor: GenreCollectionInteraction {
     private let service: MovieRepository
-    weak var output: GenreCollectionPresenter?
+    weak var output: GenreCollectionInteractorOutput?
     var genres = [Genre]()
 
     init(service: MovieRepository) {

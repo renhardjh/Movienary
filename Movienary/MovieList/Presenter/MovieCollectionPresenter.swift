@@ -35,7 +35,7 @@ class MovieCollectionPresenter: MovieCollectionPresentation {
     let loadingMoreHeight: CGFloat = 50.0
 
     var featureTitle: String {
-        return "\(genre?.name ?? "") Movies"
+        return "Discover \(genre?.name ?? "") Movies"
     }
 
     var genre: Genre? {
@@ -44,6 +44,14 @@ class MovieCollectionPresenter: MovieCollectionPresentation {
 
     var movieCount: Int {
         return interactor.movies.count
+    }
+
+    private var isLastPage: Bool {
+        return interactor.currentPage == interactor.totalPages
+    }
+
+    private var canLoadMore: Bool {
+        return interactor.page == interactor.currentPage
     }
 
     init(view: MovieCollectionViewInterface, router: MovieCollectionRouter, interactor: MovieCollectionInteractor) {
@@ -66,7 +74,9 @@ class MovieCollectionPresenter: MovieCollectionPresentation {
     }
 
     func endLessScroll(_ indexPath: IndexPath) {
-        if interactor.status != .loading, indexPath.item == movieCount - 1 {
+        if indexPath.item == movieCount - coloumnCount,
+           !isLastPage,
+           canLoadMore {
             interactor.page += 1
             interactor.fetchMovies()
         }

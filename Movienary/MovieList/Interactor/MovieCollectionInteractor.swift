@@ -10,7 +10,8 @@ import Foundation
 protocol MovieCollectionInteraction {
     var genre: Genre? { get set }
     var movies: [Movie] { get set }
-    var status: Network.Status { get set }
+    var totalPages: Int { get set }
+    var currentPage: Int { get set }
     var page: Int { get set }
     func fetchMovies()
 }
@@ -22,11 +23,12 @@ protocol MovieCollectionInteractorOutput: AnyObject {
 
 class MovieCollectionInteractor: MovieCollectionInteraction {
     private let service: MovieRepository
-    weak var output: MovieCollectionPresenter?
+    weak var output: MovieCollectionInteractorOutput?
     var genre: Genre?
     var movies = [Movie]()
-    var status: Network.Status = .notLoad
+    var totalPages = 0
 
+    var currentPage = 0
     var page = 1
 
     init(service: MovieRepository) {
@@ -35,20 +37,18 @@ class MovieCollectionInteractor: MovieCollectionInteraction {
 
     func fetchMovies() {
         let genreID = genre?.id ?? 0
-        status = .loading
         service.getMovieList(genreID: genreID, page: page, responseType: MovieList.self) { [weak self] result in
             switch result {
             case .success(let data):
                 if data.success == false, let statusMsg = data.statusMessage {
-                    self?.status = .failed
                     self?.output?.fetchFailure(error: statusMsg)
                 } else {
-                    self?.status = .success
                     self?.movies.append(contentsOf: data.results ?? [])
+                    self?.totalPages = data.totalPages
+                    self?.currentPage = data.page
                     self?.output?.movieFetched()
                 }
             case .failure(let error):
-                self?.status = .failed
                 self?.output?.fetchFailure(error: error.localizedDescription)
             }
         }

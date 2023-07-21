@@ -18,10 +18,12 @@ class MovieCollectionViewCell: UICollectionViewCell {
     func setContent(_ movie: Movie) {
         let dateFormat = "dd MMM yyyy"
         ivImage.isSkeletonable = true
+        let releaseDate = movie.releaseDate ?? ""
+        let posterPath = movie.posterPath ?? ""
         
         lbTitle.text = movie.title
-        lbReleasedDate.text = DateFormatHelper(date: movie.releaseDate).getDate(format: dateFormat)
-        if let imageURL = URL(string: Network.Host.moviedbImage(type: .preview, pathName: movie.posterPath).value) {
+        lbReleasedDate.text = DateFormatHelper(date: releaseDate).getDate(format: dateFormat)
+        if let imageURL = URL(string: Network.Host.moviedbImage(type: .preview, pathName: posterPath).value) {
             ivImage.sd_setImage(with: imageURL)
         }
     }

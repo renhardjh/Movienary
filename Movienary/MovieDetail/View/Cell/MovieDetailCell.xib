@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="604" id="5Gb-1r-l6T" customClass="MovieDetailCell" customModule="Movienary" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="570"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Gb-1r-l6T" id="2IL-10-bcv">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="570"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EK2-qo-DlY">
+                        <rect key="frame" x="16" y="0.0" width="361" height="260"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="260" id="yjQ-wo-Fho"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <integer key="value" value="12"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spiderman: No Way Home" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sd-9S-oFD">
+                        <rect key="frame" x="133" y="280" width="244" height="52.666666666666686"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                <integer key="value" value="6"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="lastLineFillPercent">
+                                <integer key="value" value="90"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7.3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajn-HD-a0t">
+                        <rect key="frame" x="133" y="340.66666666666669" width="28" height="24"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                <integer key="value" value="6"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="lastLineFillPercent">
+                                <integer key="value" value="90"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(100 votes)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epf-5g-6IT">
+                        <rect key="frame" x="166" y="348.66666666666669" width="59" height="14"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                <integer key="value" value="6"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="lastLineFillPercent">
+                                <integer key="value" value="90"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release at 21 July 2023" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIu-fx-VRH">
+                        <rect key="frame" x="133" y="392" width="244" height="17"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                <integer key="value" value="6"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="lastLineFillPercent">
+                                <integer key="value" value="90"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32E-Ke-wq1">
+                        <rect key="frame" x="16" y="463" width="361" height="21.666666666666686"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                <integer key="value" value="6"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="lastLineFillPercent">
+                                <integer key="value" value="90"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Action, Thriller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctU-od-7IZ">
+                        <rect key="frame" x="133" y="367.66666666666669" width="244" height="16.333333333333314"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                <integer key="value" value="6"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="lastLineFillPercent">
+                                <integer key="value" value="90"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jfs-DK-2s6">
+                        <rect key="frame" x="16" y="489.66666666666674" width="361" height="56"/>
+                        <string key="text">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</string>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="linesCornerRadius">
+                                <integer key="value" value="6"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="lastLineFillPercent">
+                                <integer key="value" value="90"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RA2-Cg-GRs">
+                        <rect key="frame" x="16" y="278" width="105" height="140"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="105" id="K0Z-Vr-Ods"/>
+                            <constraint firstAttribute="height" constant="140" id="nw6-hn-tvF"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <integer key="value" value="12"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B34-Qa-k9m" customClass="YouTubePlayerView" customModule="YouTubePlayer">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="260"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIc-De-djb">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="260"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" image="ic_play_video"/>
+                        <buttonConfiguration key="configuration" style="plain" image="ic_play_video"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHiddenWhenSkeletonIsActive" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="didTapPlayTrailer:" destination="5Gb-1r-l6T" eventType="touchUpInside" id="0MD-Co-GVe"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="oIc-De-djb" secondAttribute="trailing" id="1fR-d6-KwI"/>
+                    <constraint firstItem="9sd-9S-oFD" firstAttribute="top" secondItem="EK2-qo-DlY" secondAttribute="bottom" constant="20" id="42e-Tg-nDv"/>
+                    <constraint firstItem="epf-5g-6IT" firstAttribute="leading" secondItem="ajn-HD-a0t" secondAttribute="trailing" constant="5" id="6GE-Nf-D0u"/>
+                    <constraint firstItem="EK2-qo-DlY" firstAttribute="leading" secondItem="2IL-10-bcv" secondAttribute="leading" constant="16" id="6pf-Md-Wtd"/>
+                    <constraint firstItem="oIc-De-djb" firstAttribute="top" secondItem="EK2-qo-DlY" secondAttribute="top" id="7uL-8E-pqU"/>
+                    <constraint firstItem="9sd-9S-oFD" firstAttribute="leading" secondItem="RA2-Cg-GRs" secondAttribute="trailing" constant="12" id="ApZ-cC-t6p"/>
+                    <constraint firstItem="32E-Ke-wq1" firstAttribute="leading" secondItem="RA2-Cg-GRs" secondAttribute="leading" id="CBo-M8-x2t"/>
+                    <constraint firstItem="Jfs-DK-2s6" firstAttribute="leading" secondItem="32E-Ke-wq1" secondAttribute="leading" id="DWK-MU-bzN"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="epf-5g-6IT" secondAttribute="trailing" constant="16" id="EXU-ME-AT0"/>
+                    <constraint firstItem="32E-Ke-wq1" firstAttribute="top" secondItem="yIu-fx-VRH" secondAttribute="bottom" constant="54" id="K7W-CW-nqY"/>
+                    <constraint firstItem="B34-Qa-k9m" firstAttribute="trailing" secondItem="oIc-De-djb" secondAttribute="trailing" id="PCM-Qu-mWy"/>
+                    <constraint firstItem="yIu-fx-VRH" firstAttribute="trailing" secondItem="ctU-od-7IZ" secondAttribute="trailing" id="QvE-ab-iDq"/>
+                    <constraint firstItem="yIu-fx-VRH" firstAttribute="top" secondItem="ctU-od-7IZ" secondAttribute="bottom" constant="8" id="RZr-hq-6hy"/>
+                    <constraint firstItem="epf-5g-6IT" firstAttribute="bottom" secondItem="ajn-HD-a0t" secondAttribute="bottom" constant="-2" id="S6I-i7-xb2"/>
+                    <constraint firstItem="B34-Qa-k9m" firstAttribute="top" secondItem="oIc-De-djb" secondAttribute="top" id="SmX-Sw-ZUH"/>
+                    <constraint firstAttribute="bottom" secondItem="Jfs-DK-2s6" secondAttribute="bottom" constant="24.333333333333258" id="TIP-Pl-LWa"/>
+                    <constraint firstItem="oIc-De-djb" firstAttribute="leading" secondItem="2IL-10-bcv" secondAttribute="leading" id="TU9-V3-DPU"/>
+                    <constraint firstItem="ajn-HD-a0t" firstAttribute="leading" secondItem="RA2-Cg-GRs" secondAttribute="trailing" constant="12" id="Zut-4e-ETN"/>
+                    <constraint firstItem="oIc-De-djb" firstAttribute="bottom" secondItem="EK2-qo-DlY" secondAttribute="bottom" id="aVg-Lk-U5X"/>
+                    <constraint firstAttribute="trailing" secondItem="EK2-qo-DlY" secondAttribute="trailing" constant="16" id="bkt-c1-dEI"/>
+                    <constraint firstItem="yIu-fx-VRH" firstAttribute="leading" secondItem="RA2-Cg-GRs" secondAttribute="trailing" constant="12" id="c9w-VG-Z7p"/>
+                    <constraint firstItem="B34-Qa-k9m" firstAttribute="bottom" secondItem="oIc-De-djb" secondAttribute="bottom" id="dkD-Zy-2eR"/>
+                    <constraint firstItem="ctU-od-7IZ" firstAttribute="top" secondItem="epf-5g-6IT" secondAttribute="bottom" constant="5" id="fDi-SO-Hw0"/>
+                    <constraint firstItem="RA2-Cg-GRs" firstAttribute="top" secondItem="EK2-qo-DlY" secondAttribute="bottom" constant="18" id="h94-GV-Xgx"/>
+                    <constraint firstItem="ctU-od-7IZ" firstAttribute="leading" secondItem="RA2-Cg-GRs" secondAttribute="trailing" constant="12" id="jDk-Gz-9G5"/>
+                    <constraint firstItem="Jfs-DK-2s6" firstAttribute="trailing" secondItem="32E-Ke-wq1" secondAttribute="trailing" id="l4P-YI-Xd4"/>
+                    <constraint firstItem="Jfs-DK-2s6" firstAttribute="top" secondItem="32E-Ke-wq1" secondAttribute="bottom" constant="5" id="nAY-pU-tiH"/>
+                    <constraint firstItem="EK2-qo-DlY" firstAttribute="top" secondItem="2IL-10-bcv" secondAttribute="top" id="o3F-eX-g9f"/>
+                    <constraint firstItem="ctU-od-7IZ" firstAttribute="trailing" secondItem="9sd-9S-oFD" secondAttribute="trailing" id="qpG-tF-xAu"/>
+                    <constraint firstAttribute="trailing" secondItem="9sd-9S-oFD" secondAttribute="trailing" constant="16" id="rxb-KQ-ba4"/>
+                    <constraint firstItem="RA2-Cg-GRs" firstAttribute="leading" secondItem="2IL-10-bcv" secondAttribute="leading" constant="16" id="uLQ-y0-9kY"/>
+                    <constraint firstItem="B34-Qa-k9m" firstAttribute="leading" secondItem="oIc-De-djb" secondAttribute="leading" id="wVT-4g-yhp"/>
+                    <constraint firstItem="ajn-HD-a0t" firstAttribute="top" secondItem="9sd-9S-oFD" secondAttribute="bottom" constant="8" id="xjS-17-XUN"/>
+                    <constraint firstItem="32E-Ke-wq1" firstAttribute="trailing" secondItem="ctU-od-7IZ" secondAttribute="trailing" id="xwE-IF-E8N"/>
+                </constraints>
+                <userDefinedRuntimeAttributes>
+                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                </userDefinedRuntimeAttributes>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="btnPlayTrailer" destination="oIc-De-djb" id="fyn-WW-dLZ"/>
+                <outlet property="ivImage" destination="EK2-qo-DlY" id="ch4-FK-0Cj"/>
+                <outlet property="ivPoster" destination="RA2-Cg-GRs" id="csH-hz-oUe"/>
+                <outlet property="lbGenres" destination="ctU-od-7IZ" id="Afn-4z-cUW"/>
+                <outlet property="lbOverview" destination="Jfs-DK-2s6" id="cQn-Kc-YSv"/>
+                <outlet property="lbReleaseDate" destination="yIu-fx-VRH" id="bS0-oZ-dVZ"/>
+                <outlet property="lbTitle" destination="9sd-9S-oFD" id="bd9-4n-MGT"/>
+                <outlet property="lbVoteAverage" destination="ajn-HD-a0t" id="9OU-ap-OBD"/>
+                <outlet property="lbVoteCount" destination="epf-5g-6IT" id="DVe-Ex-34z"/>
+                <outlet property="videoPlayer" destination="B34-Qa-k9m" id="WCm-SO-G7y"/>
+            </connections>
+            <point key="canvasLocation" x="-400.76335877862596" y="133.80281690140845"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_play_video" width="48" height="48"/>
+    </resources>
+</document>

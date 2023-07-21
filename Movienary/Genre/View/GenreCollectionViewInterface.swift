@@ -7,9 +7,8 @@
 
 import Foundation
 
-protocol GenreCollectionViewInterface: AnyObject {
+protocol GenreCollectionViewInterface: AnyObject, BaseViewInterface {
     func displayLoading()
     func hideLoading()
     func displayGenres()
-    func displayAlert(type: AlertType, message: String)
 }

@@ -12,26 +12,30 @@ struct MovieList: Decodable, BaseResponse {
     var statusMessage: String?
     var success: Bool?
     let results: [Movie]?
+    let page: Int
+    let totalPages: Int
 
     enum CodingKeys: String, CodingKey {
         case statusCode = "status_code"
         case statusMessage = "status_message"
         case success
         case results
+        case page
+        case totalPages = "total_pages"
     }
 }
 
 struct Movie: Decodable {
-    let adult: Bool
+    let adult: Bool?
     let backdropPath: String?
-    let genreIDS: [Int]
-    let id: Int
-    let originalLanguage, originalTitle, overview: String
-    let popularity: Double
-    let posterPath, releaseDate, title: String
-    let video: Bool
-    let voteAverage: Double
-    let voteCount: Int
+    let genreIDS: [Int]?
+    let id: Int?
+    let originalLanguage, originalTitle, overview: String?
+    let popularity: Double?
+    let posterPath, releaseDate, title: String?
+    let video: Bool?
+    let voteAverage: Double?
+    let voteCount: Int?
 
     enum CodingKeys: String, CodingKey {
         case adult
