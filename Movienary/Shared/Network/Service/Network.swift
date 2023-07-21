@@ -26,13 +26,6 @@ final class Network {
             }
         }
     }
-
-    enum Status {
-        case notLoad
-        case loading
-        case failed
-        case success
-    }
 }
 
 enum PosterType {
