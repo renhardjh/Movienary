@@ -10,6 +10,8 @@
 		489F73DDE3DFBE5BD51E7FDD /* Pods_Movienary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD3E7E9878A30EC60BBD57AA /* Pods_Movienary.framework */; };
 		926608A936B8854A6BC54E75 /* Pods_Movienary_MovienaryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C8A5BFC0D793BEA9ED5387 /* Pods_Movienary_MovienaryUITests.framework */; };
 		AD039B090391E856B267486F /* Pods_MovienaryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B3BAE6B2467F12B6BE5DDBE /* Pods_MovienaryTests.framework */; };
+		FA04E2462A7CF6330043C879 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA04E2452A7CF6330043C879 /* TestViewController.xib */; };
+		FA04E2482A7CF7990043C879 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA04E2472A7CF7990043C879 /* TestViewController.swift */; };
 		FADF4FFB2A6A5A110074B5EF /* MovieReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF4FFA2A6A5A110074B5EF /* MovieReviewCell.swift */; };
 		FADF4FFD2A6A5B3B0074B5EF /* MovieReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADF4FFC2A6A5B3B0074B5EF /* MovieReviewCell.xib */; };
 		FADF4FFF2A6A5E6B0074B5EF /* MovieReviewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF4FFE2A6A5E6B0074B5EF /* MovieReviewList.swift */; };
@@ -103,6 +105,8 @@
 		D95605033E23AFFC4F27408F /* Pods-Movienary-MovienaryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movienary-MovienaryUITests.release.xcconfig"; path = "Target Support Files/Pods-Movienary-MovienaryUITests/Pods-Movienary-MovienaryUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E1CC54E4DD8FE8699D7B2B86 /* Pods-Movienary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movienary.debug.xcconfig"; path = "Target Support Files/Pods-Movienary/Pods-Movienary.debug.xcconfig"; sourceTree = "<group>"; };
 		F17899D234C8EAFF3A92FBA0 /* Pods-Movienary-MovienaryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movienary-MovienaryUITests.debug.xcconfig"; path = "Target Support Files/Pods-Movienary-MovienaryUITests/Pods-Movienary-MovienaryUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FA04E2452A7CF6330043C879 /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
+		FA04E2472A7CF7990043C879 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		FADF4FFA2A6A5A110074B5EF /* MovieReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieReviewCell.swift; sourceTree = "<group>"; };
 		FADF4FFC2A6A5B3B0074B5EF /* MovieReviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieReviewCell.xib; sourceTree = "<group>"; };
 		FADF4FFE2A6A5E6B0074B5EF /* MovieReviewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieReviewList.swift; sourceTree = "<group>"; };
@@ -226,6 +230,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FA04E2442A7CF60E0043C879 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				FA04E2452A7CF6330043C879 /* TestViewController.xib */,
+				FA04E2472A7CF7990043C879 /* TestViewController.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		FAE9AA952A66E83F009CCFE2 = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +271,7 @@
 				FAE9AAD12A66E976009CCFE2 /* Genre */,
 				FAE9AAD22A66E980009CCFE2 /* MovieList */,
 				FAE9AAD32A66E98D009CCFE2 /* MovieDetail */,
+				FA04E2442A7CF60E0043C879 /* Test */,
 				FAE9AAAA2A66E842009CCFE2 /* Assets.xcassets */,
 				FAE9AAAC2A66E842009CCFE2 /* LaunchScreen.storyboard */,
 				FAE9AAAF2A66E842009CCFE2 /* Info.plist */,
@@ -738,6 +752,7 @@
 				FAE9AAAE2A66E842009CCFE2 /* LaunchScreen.storyboard in Resources */,
 				FAE9AAAB2A66E842009CCFE2 /* Assets.xcassets in Resources */,
 				FADF4FFD2A6A5B3B0074B5EF /* MovieReviewCell.xib in Resources */,
+				FA04E2462A7CF6330043C879 /* TestViewController.xib in Resources */,
 				FAE9AADC2A66EC07009CCFE2 /* GenreCollectionViewController.xib in Resources */,
 				FAE9AB3D2A686820009CCFE2 /* MovieCollectionViewCell.xib in Resources */,
 				FAE9AB5F2A69A533009CCFE2 /* MovieDetailCell.xib in Resources */,
@@ -884,6 +899,7 @@
 				FAE9AAE52A67142A009CCFE2 /* GenreCollectionInteractor.swift in Sources */,
 				FAE9AAF72A671FAA009CCFE2 /* GenreCollectionPresenter.swift in Sources */,
 				FAE9AB172A67F3AC009CCFE2 /* BaseResponse.swift in Sources */,
+				FA04E2482A7CF7990043C879 /* TestViewController.swift in Sources */,
 				FAE9AB2A2A684020009CCFE2 /* MovieCollectionRouter.swift in Sources */,
 				FAE9AAEC2A6717BC009CCFE2 /* Network.swift in Sources */,
 				FAE9AB402A68F0A3009CCFE2 /* DateFormatHelper.swift in Sources */,

@@ -164,6 +164,12 @@ extension MovieDetailViewController {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         presenter.endLessScroll(indexPath)
     }
+
+    @IBAction func didTapButtonTest(_ button: UIButton) {
+        let testVC = TestViewController()
+        testVC.modalPresentationStyle = .fullScreen
+        self.present(testVC, animated: true)
+    }
 }
 
 extension MovieDetailViewController: MovieDetailDelegate {

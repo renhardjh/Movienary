@@ -7,9 +7,13 @@
 
 import UIKit
 
-class GenreCollectionDepencyContainer {
+protocol AnyRouterContainer {
+    static func createModule(for bundle: Any?) -> UIViewController
+}
 
-    func createModule() -> UIViewController {
+class GenreCollectionDepencyContainer: AnyRouterContainer {
+
+    static func createModule(for bundle: Any? = nil) -> UIViewController {
         let view = GenreCollectionViewController()
         let service = MovieService()
         let router = GenreCollectionRouter()

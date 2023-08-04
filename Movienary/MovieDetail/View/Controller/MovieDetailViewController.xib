@@ -21,19 +21,36 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ktQ-WM-UG4">
-                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <rect key="frame" x="0.0" y="59" width="393" height="679"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfO-BH-vdR">
+                    <rect key="frame" x="16" y="748" width="361" height="50"/>
+                    <color key="backgroundColor" systemColor="linkColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="vHG-eG-dO4"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Test">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="didTapButtonTest:" destination="-1" eventType="touchUpInside" id="M05-XO-QhP"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="vfO-BH-vdR" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="3E5-d9-TQT"/>
+                <constraint firstItem="vfO-BH-vdR" firstAttribute="top" secondItem="ktQ-WM-UG4" secondAttribute="bottom" constant="10" id="A0m-mB-V92"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vfO-BH-vdR" secondAttribute="trailing" constant="16" id="HSs-k8-kKV"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ktQ-WM-UG4" secondAttribute="trailing" id="Pg8-cb-G4y"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="vfO-BH-vdR" secondAttribute="bottom" constant="20" id="kAj-4f-bjC"/>
                 <constraint firstItem="ktQ-WM-UG4" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="n42-Ea-QB7"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ktQ-WM-UG4" secondAttribute="bottom" id="usG-GL-0lq"/>
                 <constraint firstItem="ktQ-WM-UG4" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="xvV-sJ-4JZ"/>
             </constraints>
             <userDefinedRuntimeAttributes>
@@ -43,6 +60,9 @@
         </view>
     </objects>
     <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

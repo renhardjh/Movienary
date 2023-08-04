@@ -7,9 +7,12 @@
 
 import UIKit
 
-class MovieDetailDepencyContainer {
+class MovieDetailDepencyContainer: AnyRouterContainer {
 
-    func createModule(for movie: Movie) -> UIViewController {
+    static func createModule(for bundle: Any?) -> UIViewController {
+        guard let movie = bundle as? Movie else {
+            return UIViewController()
+        }
         let view = MovieDetailViewController()
         let service = MovieService()
         let router = MovieDetailRouter()
