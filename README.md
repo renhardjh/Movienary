@@ -17,3 +17,6 @@ User stories:
 6. Implement endless scrolling on list of movies and users review.
 7. Cover positive and negative cases.
 
+Preview:
+
+![Simulator Screen Recording - iPhone 14 Pro Max - 2023-07-21 at 21 29 23](https://github.com/renhardjh/Movienary/assets/24643123/968ee110-213b-41ce-8eff-5812d80e0d1a)
